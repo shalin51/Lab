@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Lab 2</title>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOIeQxtEA5zEJTH68jRnQDosCvt3_5FTA&libraries=places"></script>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/customeStylesheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div class="row"><h3>Login</h3></div>
+            <div class="row">
+                <div class="row">
+                    <label class=" col-lg-4" align="right">Username</label>
+                    <input class="col-lg-4" type="text" id="txtUser" />
+                    <span class="col-lg-4" id="erroUser"></span>
+                </div>
+                <div class="row">
+                    <label class=" col-lg-4" align="right">Password</label>
+                    <input class="col-lg-4" type="text" id="txtPass"  />
+                    <span class="col-lg-4" id="erroPass"></span>
+                </div>
+
+                <div class="row ">
+                    <button class="btn btn-primary btn-Margin col-lg-offset-4  control-group" id="btnLogin">Login</button>
+                </div>
+                <div class="row">
+                    <a href="#" class="col-lg-offset-5 col-lg-2 marginSide">forgot passwrod? </a>
+                    <a href="Register.html" class="col-lg-5">Register </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/App.js"></script>
+    <script src="js/cookie.js"></script>
+</body>
+</html>
