@@ -1,0 +1,36 @@
+﻿<html lang="en" ng-app="myApp">
+<head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="587634445493-7k1c3r3n78f4f5qn10ul85qb3e55perg.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/App.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="container ">
+    <div class="row">
+        <label class="col-lg-2">Sign In With Google</label>
+        <div class="row g-signin2 col-lg-2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <a class="row col-lg-2" onclick="signOut();">Sign out</a>
+    </div>
+        <script>
+            window.onbeforeunload = function (e) {
+                gapi.auth2.getAuthInstance().signOut();
+            };
+            function onSignIn(googleUser) {
+                // Useful data for your client-side scripts:
+                var newWin = window.open("Home.html", "_blank");
+            };
+        </script>
+        <script>
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+            }
+        </script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

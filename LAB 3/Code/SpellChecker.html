@@ -1,0 +1,54 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSSample</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+    <h3> Spell Checker and Suggester</h3>
+    <div>
+        <input type="text" id="wrongInput"  />
+    </div>
+    <div>
+        <input type="text" id="rightOutput" value=" " />
+    </div>
+    <div>
+        <button id="submit">Check</button>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("ready!");
+            var input = $('#wrongInput').val();
+            var out = $('#rightOutput');
+
+            $('#submit').click(function () {               
+                var params = {
+                    // Request parameters
+                };
+                $.ajax({
+                    url: "https://api.cognitive.microsoft.com/bing/v5.0/spellcheck/?" + $.param(params),
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "b186b264bdea47be961338c6964219f2");
+                    },
+                    type: "POST",
+                    // Request body
+                    data: { "Text": $('#wrongInput').val() },
+                })
+                .done(function (data) {
+                    var suggestionArray=new Array();
+                    for (var i = 0; i < data.flaggedTokens.length; i++) {
+                        suggestionArray.push(data.flaggedTokens[i].suggestions[0].suggestion);
+                    }
+                    out.val(suggestionArray.join(" "));                 
+                })
+                .fail(function () {
+                    alert("error");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
