@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab 5</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="title_activity_track_gps">TrackGPS</string>
+    <string name="title_activity_home">HomeActivity</string>
+</resources>
