@@ -1,0 +1,22 @@
+.left {
+   
+    float:left;
+    min-height: 50px;
+   padding-right: 50px;
+}
+
+.right {
+    min-height: 50px;
+    margin-left: 10px;
+}
+
+.clearClass{
+    clear: both;
+}
+
+.button{
+    border-radius: 4px;
+    padding: 12px 12px 12px 12px;
+    font-size: 16px;
+    background-color: #008CBA;
+}

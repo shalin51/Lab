@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Lab 9</title>
+    </head>
+   <link rel="stylesheet" href="css/style.css">
+    <script  src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script src="js/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<body ng-controller='PhoneListController'>
+    <div>
+        <div>
+            <input type="text" id="txtimg" placeholder="Enter image url"/>
+             <button id="btnUpload" ng-click="btnImageUploadClicked()" class="button"> Upload Image
+        </button>
+        </div>
+       
+       <div>
+           <div class="left">
+               <img ng-src="{{imgSrc}}" width="500px" height="500px"/>
+           </div>
+           <div class="right">
+              Image Contains 
+              <li ng-repeat="match in matches"> 
+                    {{match}}
+              </li>
+             
+           </div>
+       </div>
+  </div>
+  <div class="clearClass">
+      <h2>Enter image of celebrity</h2>
+      <div class="left" >
+          <img ng-src="{{img2}}" width="500px" height="500px"/>
+      </div>
+      <div class="right">
+          <button class="button" id="btnCelebrity" ng-click="GetCelebrityName()">Get Name</button>
+          </br>
+          <label>{{celebrityName}}</label>
+      </div>
+  </div>
+</body>
+</html>
