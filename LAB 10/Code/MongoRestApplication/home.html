@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body ng-controller="HomeCtrl">
+  <div  >
+      <h1>Users Details</h1>
+<table class="rwd-table">
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email Address</th>
+    <th>Password</th>
+  </tr>
+  <tr ng-repeat="user in users"  >
+    <td >{{user.fname}}</td>
+    <td >{{user.lname}}</td>
+    <td >{{user.email}}</td>
+    <td >{{user.pw}}</td>
+    <td><button id="btnDelete"  ng-click="deleteData($event)">Delete</button></td>
+    <td><button id="btnUpdate" ng-click="updateData($event)">Update</button></td>
+  </tr>
+</table>
+
+<div>
+  <h2>Enter your Update
+  </h2></br>
+  <input placeholder="Enter Name" ng-model="uFirstname" readonly></input>
+  <input placeholder="Enter Last Name" ng-model="uLastName"/>
+  <input placeholder="Enter Email" ng-model="uEmail"/>
+  <input placeholder="Enter Password" ng-model="uPw"/>
+  <button id="btnSave" ng-click="btnSaveClicked()">Save</button>
+  <button id="btnCancle" ng-click="btnCancleClicked()">Cancle</button>
+</div>
+
+      
+</div> <!-- /form -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
